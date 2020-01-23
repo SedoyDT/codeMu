@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><> З А Г О Л О В О К_Ф А Й Л А <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        console.log('С С Ы Л К А__Н А__З А Д А Ч У:  http://code.mu/ru/javascript/prime/multidimensionality/practice-on-multi-arrays-objects/       ');
+        let data = {
+	2018: {
+		11: {
+			29: [1, 2, 3],
+			30: [4, 5],
+		},
+		12: {
+			30: [6, 7],
+			31: [8, 9],
+		},
+	},
+	2019: {
+		12: {
+			29: [10, 11],
+			30: [12, 13],
+			31: [14, 15],
+		}
+	},
+}
+let arr = []
+for (let year in data){
+   // console.log(data[year])
+           let dat = data[year]
+          // console.log(dat)
+           for( month in dat){
+               let d = dat[month]
+               //console.log(d)
+               for (day in d){
+                   let da = d[day]
+                  // console.log(da)
+                  for (num of da){
+                      arr.push(num)
+                  }
+               }
+           }
+    // for (let month in data[year]){
+    //     for (day in month[data][year]){
+    //       for (nums in day[data][year][month]){
+    //           count += nums
+    //       }
+    //     }
+
+    // }
+
+}
+console.log(arr)
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let arr2 = []
+let arr1 = []
+let affairs = [
+	{
+		date:  '2019-12-29',
+		event: 'name1'
+	},
+	{
+		date:  '2019-12-31',
+		event: 'name2'
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name3'
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name4'
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name5'
+	},
+	{
+		date:  '2019-12-31',
+		event: 'name6'
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name7'
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name8'
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name9'
+	},
+]
+for ( let ev of affairs){
+	arr2.push(ev.date)
+}
+function unique(arr) {
+  let result = [];
+
+  for (let str of arr) {
+    if (!result.includes(str)) {
+      result.push(str);
+    }
+  }
+
+  return result;
+}
+
+console.log(unique(arr2)) // выводим уникальные значения из массива с помощью функции unique
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let users = [
+	{
+		name: 'name1',
+		age: 31,
+		active: true,
+	},
+	{
+		name: 'name2',
+		age: 32,
+		active: false,
+	},
+	{
+		name: 'name3',
+		age: 33,
+		active: true,
+	},
+	{
+		name: 'name4',
+		age: 34,
+		active: false,
+	},
+	{
+		name: 'name5',
+		age: 35,
+		active: true,
+	},
+];
+for( keys of Object.values(users)){
+    for (let key of Object.values(keys)){
+        if (key == true)
+        console.log(keys)
+    }
+}
+console.log("/////")
+for (let user of users){
+	if (user.active == true) console.log(user)
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><>СТРАНЫ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let data2 = [
+	{
+		country: 'Россия',
+		city:    'Москва',
+	},
+	{
+		country: 'Беларусь',
+		city:    'Минск',
+	},
+	{
+		country: 'Россия',
+		city:    'Питер',
+	},
+	{
+		country: 'Россия',
+		city:    'Владивосток',
+	},
+	{
+		country: 'Украина',
+		city:    'Львов',
+	},
+	{
+		country: 'Беларусь',
+		city:    'Могилев',
+	},
+	{
+		country: 'Украина',
+		city:    'Киев',
+	},
+];
+let arr3 = []
+for ( let c of data2){
+	arr3.push(c.country)
+}
+
+
+console.log(arr3)
+document.write('<pre>', JSON.stringify(  /// Функция вывода повторений всех элементов массива
+  arr3.reduce((acc, el) => {
+    acc[el] = (acc[el] || 0) + 1;
+    return acc;
+  }, {}), null, 0), '</pre>'); 
+  console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+  console.log('С С Ы Л К А__Н А__П Р И М Е Р:  https://ru.stackoverflow.com/questions/544063/%D0%9A%D0%B0%D0%BA-%D0%BF%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE%D0%B2%D1%82%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B5       ');
+  
+  console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+  let affairs2 = {
+	'2019-12-31': ['массив дел'],
+	'2018-11-29': ['массив дел'],
+	'2018-11-30': ['массив дел'],
+	'2018-12-27': ['массив дел'],
+	'2019-12-29': ['массив дел'],
+	'2019-12-30': ['массив дел'],
+	'2018-12-30': ['массив дел'],
+	'2018-12-31': ['массив дел'],
+} 
+console.log("Выводим все значения за 2018")
+for (let date in affairs2){
+	if (date.indexOf('2018') !==  -1 ){
+		console.log(date + " " +affairs2[date])
+	}
+	// console.log(date.indexOf("2018") != 0)
+}
+console.log("Выводим все значения за 12 месяц 2018")
+for (let date in affairs2){
+	if (date.indexOf('2018-12') !==  -1 ){
+		console.log(date + " " +affairs2[date])
+	}
+	// console.log(date.indexOf("2018") != 0)
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let users2 = [
+	{
+		name: 'name1',
+		active: true,
+	},
+	{
+		name: 'name2',
+		active: false,
+	},
+	{
+		name: 'name3',
+		active: true,
+	},
+	{
+		name: 'name4',
+		active: false,
+	},
+	{
+		name: 'name5',
+		active: true,
+	},
+];
+function trueToFalse(arr,num){
+      if (users2[num].active == false){
+		  console.log("Уже ложь")
+	  }else users2[num].active = false
+	  return users2
+}
+function FalseToTrue(arr,num){
+      if (users2[num].active == true){
+		  console.log("Уже Правда")
+	  }else users2[num].active = true
+	 return users2
+}
+console.log(trueToFalse(users2,0))
+console.log(FalseToTrue(users2,1))
+ // console.log(users2[0])
+	  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function r(n,nn,nnn){
+                let res = n * nn * nnn
+                return res
+            }
+           // alert(r(1,2,3))
+
+            function sq(num,num2){
+                let a = Math.sqrt(num)
+                let b = Math.sqrt(num2)
+                return a+b
+            }
+           // alert(sq(4,3))
+
+            console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+            console.log('<><><><><><><><><><><><><><><><>< Функции в функциях <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+            function square(num) {
+	return num * num;
+}
+
+function cube(num) {
+	return num * num * num;
+}
+function sum(num1, num2) {
+	return num1 + num2;
+}
+// let result = cube(square(2))
+ // alert(result)
+
+result = sum(square(2),square(3))
+ // alert(result)
+function sqrt(num) {
+	return Math.sqrt(num);
+}
+
+function round(num) {
+	return num.toFixed(1);
+}
+function summ(num1, num2, num3) {
+	return num1 + num2 + num3;
+}
+result = round(sqrt(2))
+// alert(result)
+result = round(summ(sqrt(2),sqrt(3),sqrt(4)))
+ /// alert(result)
+ console.log('<><        return in loop    ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+ function func(arr) {
+	let sum = 0;
+	
+	for (let i = 0; i < arr.length; i++) {
+		sum += arr[i];
+		
+		// Если сумма больше или равна 10:
+		if (sum >= 10) {
+			return i + 1; // выходим из цикла и из функции
+		}
+	}
+}
+
+ result = func([1, 2, 3, 4, 5]);
+// alert(result);
+let res = 0
+
+function f10(num){
+  let count = 0
+  while ( true){
+      res = (num / 2)
+    
+       if (res < 10){
+           console.log(count)
+       }
+       count++
+    console.log(count)
+    
+
+}}
+console.log(f10(100))
+
+
+    </script>
+</body>
+</html>

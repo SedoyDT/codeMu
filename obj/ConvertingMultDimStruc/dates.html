@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+    console.log('С С Ы Л К А__Н А__П Р И М Е Р: http://code.mu/ru/javascript/prime/multidimensionality/conversion-of-multi-structures/        ');
+    let affairs = {
+	'2018-11-29': ['массив данных'],
+	'2018-11-30': ['массив данных'],
+	'2018-12-30': ['массив данных'],
+	'2018-12-31': ['массив данных'],
+	
+	'2019-12-29': ['массив данных'],
+	'2019-12-30': ['массив данных'],
+	'2019-12-31': ['массив данных'],
+}
+
+console.log('Р Е З У Л Ь Т А Т');
+
+// {
+// 	'2018': {
+// 		11: {
+// 			29: ['массив данных'],
+// 			30: ['массив данных'],
+// 		},
+// 		12: {
+// 			30: ['массив данных'],
+// 			31: ['массив данных'],
+// 		},
+// 	},
+// 	'2019': {
+// 		12: {
+// 			29: ['массив данных'],
+// 			30: ['массив данных'],
+// 			31: ['массив данных'],
+// 		}
+// 	},
+// }
+let result = {}
+for (let key in affairs){
+    let date = key.split("-");
+    let year = date[0]
+    let month = date[1]
+    let day = date[2]
+
+    if(result[year]==undefined){
+        result[year]={}
+    }
+    if (result[year][month]== undefined){
+        result[year][month] = {}
+    }
+    if (result[year][month][day]== undefined){
+        result[year][month][day]= {}
+    }
+    result[year][month][day] = affairs[key]
+}
+console.log(result)
+// Упрощение с помощью деструкторизации
+console.log('Упрощение с помощью деструкторизации');
+let result2 = {};
+
+for (let key in affairs) {
+	let [year, month,day]= key.split('-');
+	
+	if (result[year] == undefined) {
+		result[year] = {};
+	}
+	if (result[year][month] == undefined) {
+		result[year][month] = {};
+	}
+	
+	result[year][month][day] = affairs[key];
+}
+
+console.log(result2);
+    console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+    let events = [
+	{
+		date:  '2019-12',
+		event: 'name1'
+	},
+	{
+		date:  '2019-12',
+		event: 'name2'
+	},
+	{
+		date:  '2019-11',
+		event: 'name3'
+	},
+	{
+		date:  '2019-11',
+		event: 'name4'
+	},
+	{
+		date:  '2020-10',
+		event: 'name5'
+	},
+	{
+		date:  '2020-10',
+		event: 'name6'
+	},
+	{
+		date:  '2020-11',
+		event: 'name5'
+	},
+	{
+		date:  '2020-11',
+		event: 'name6'
+	},
+	{
+		date:  '2020-12',
+		event: 'name7'
+	},
+	{
+		date:  '2020-12',
+		event: 'name8'
+	},
+	{
+		date:  '2020-12',
+		event: 'name9'
+	},
+]
+let result3 = {}
+for (let date of events){
+    
+  let d = date.date.split("-")
+  let year = d[0]
+  let month = d[1]
+  if(result3[year]==undefined){
+        result3[year]={}
+    }
+    if (result3[year][month]== undefined){
+        result3[year][month] = []
+    }
+    result3[year][month].push(date.event)
+   
+}
+console.log(result3)
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let data = [
+	{
+		year:  2019,
+		month: 11,
+		day: 20,
+		data: ['массив с данными 2019/11/20']
+	},
+	{
+		year:  2019,
+		month: 11,
+		day: 21,
+		data: ['массив с данными 2019/11/21']
+	},
+	{
+		year:  2019,
+		month: 12,
+		day: 25,
+		data: ['массив с данными 2019/12/25']
+	},
+	{
+		year:  2019,
+		month: 12,
+		day: 26,
+		data: ['массив с данными 2019/12/26']
+	},
+	{
+		year:  2020,
+		month: 10,
+		day: 29,
+		data: ['массив с данными 2020/10/29']
+	},
+	{
+		year:  2020,
+		month: 10,
+		day: 30,
+		data: ['массив с данными 2020/10/30']
+	},
+	{
+		year:  2020,
+		month: 11,
+		day: 19,
+		data: ['массив с данными 2020/11/19']
+	},
+	{
+		year:  2020,
+		month: 11,
+		day: 20,
+		data: ['массив с данными 2020/11/20']
+	},
+]
+
+// 	год1: {
+// 		месяц1: {
+// 			день1: [массив данных],
+// 			день2: [массив данных],
+// 			день3: [массив данных],
+// 		}
+// 		месяц2: {
+// 			день1: [массив данных],
+// 			день2: [массив данных],
+// 			день3: [массив данных],
+// 		}
+// 	}
+// 	год2: {
+// 		месяц1: {
+// 			день1: [массив данных],
+// 			день2: [массив данных],
+// 			день3: [массив данных],
+// 		}
+// 		месяц2: {
+// 			день1: [массив данных],
+// 			день2: [массив данных],
+// 			день3: [массив данных],
+// 		}
+// 	}
+// }
+let result4 = {}
+for (let obj of data){
+   let year = obj.year
+   let month = obj.month
+   let day = obj.day
+   if (result4[year] == undefined){
+       result4[year] = {}
+   }
+   if (result4[year][month] == undefined){
+    result4[year][month] = {}
+   }
+   if (result4[year][month][day] == undefined ){
+    result4[year][month][day] = []
+   }
+
+    // if (result4[obj.year.month] == undefined){
+    //     result4[obj.year.month]= []
+    // }
+    
+    // if (result4[obj.year.month['day']] == undefined){
+    //     result4[obj.year.month['day']]= {}
+    // }
+result4[year][month][day].push(obj.data)
+    
+    
+  }
+  console.log(result4)
+
+    </script>
+</body>
+</html>

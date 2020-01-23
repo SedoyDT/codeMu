@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+        let arr = []
+        for (let i = 0; i<3;i++){
+            arr[i] = []
+            for (let j = 0;j<3;j++){
+                arr[i][j] = j+1;
+            }
+        }
+        console.table(arr)
+        let arr2 = []
+        for (let i = 0; i<3;i++){
+            arr2[i] = []
+            for (let j = 0;j<3;j++){
+                arr2[i].push =( j+1);
+            }
+        }
+        console.log(arr2)
+        let arr3 = []
+        for (let i = 0; i<3;i++){
+            arr3[i] = []
+            for (let j = 1;j<=5;j++){
+                arr3[i][j] = j;
+            }
+        }
+        console.table(arr3)
+        let arr4 = []
+        for (let i = 0; i<3;i++){
+            arr4[i] = []
+            for (let j = 1;j<=4;j++){
+                arr4[i][j] = 'x';
+            }
+        }
+        console.table(arr4)
+        let arr5 = []
+        for (let i = 0; i<3;i++){
+            arr5[i] = []
+            for (let j = 0;j<2;j++){
+                arr5[i][j] = []
+               for (let k = 1;k<=5;k++){
+                arr5[i][j][k]= k
+
+               }
+            }
+        }
+        console.table(arr5)
+       
+let arr6=[]
+for (let i = 0; i < 3; i++) {
+    arr6[i] = []
+	for (let j = 1; j <= 5; j++) {
+		arr6[i].push(j);
+	}
+}
+
+console.log(arr6);
+        </script>
+</body>
+</html>

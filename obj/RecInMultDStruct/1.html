@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log( "<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>" );
+      console.log(
+        "С С Ы Л К А__Н А__П Р И М Е Р: http://code.mu/ru/javascript/prime/multidimensionality/conversion-of-multi-structures/        "
+      );
+
+      console.log(
+        "<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+      );
+      let arr = [1, [2, 7, 8], [3, 4, [5, [6, 7]]]];
+      let arr3 = [1, [2, 7, 8], [3, 4, [5, [6, 7]]]];
+
+      function func(arr) {
+        for (let elem of arr) {
+          if (typeof elem == "object") {
+            func(elem);
+          } else {
+            console.log(elem);
+          }
+        }
+      }
+      // func(arr)
+      let obj = {
+        a: 1,
+        b: { c: 2, d: 3, e: 4 },
+        f: { g: 5, j: 6, k: { l: 7, m: { n: 8, o: 9 } } }
+      };
+
+      function func2(obj) {
+        for (let key in obj) {
+          if (typeof obj[key] == "object") {
+            func2(obj[key]);
+          } else {
+            console.log(obj[key]);
+          }
+        }
+      }
+      // func2(obj)
+      function sumEls(arr) {
+        let sum = 0;
+
+        for (let els of arr) {
+          if (typeof els == "object") {
+            sum += sumEls(els);
+          } else {
+            sum += els;
+          }
+        }
+        return sum;
+      }
+      // console.log(sumEls(arr))
+      let arr2 = ["a", ["b", "c", "d"], ["e", "f", ["g", ["j", "k"]]]];
+      function arrToString(arr2) {
+        let str = "";
+        for (let el of arr2) {
+          if (typeof el == "object") {
+            arrToString(el);
+          } else {
+            str = arr2.join("");
+          }
+        }
+        return str;
+      }
+      console.log(arrToString(arr2) + " Пока что не то, что нужно");
+      console.log(
+        "<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+      );
+      console.log(
+        "С С Ы Л К А__Н А__П Р И М Е Р: https://ru.stackoverflow.com/questions/716529/%D0%9A%D0%B0%D0%BA-%D0%BE%D0%B1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%82%D1%8C-%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B0-%D0%B2-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83        "
+      );
+
+      console.log(
+        "<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+      );
+      function manArr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (typeof arr[i] == "object") {
+            arr[i] = manArr(arr[i]);
+          } else {
+            arr[i] = arr[i] + "!";
+          }
+        }
+        return arr;
+      }
+      console.log(manArr(arr));
+      console.log(
+        "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+      );
+
+      function ArrPow(arr3) {
+        for (let i = 0; i < arr3.length; i++) {
+          if (typeof arr3[i] == "object") {
+            arr3[i] = ArrPow(arr3[i]);
+          } else {
+            arr3[i] = arr3[i] * arr3[i];
+          }
+        }
+        return arr3;
+      }
+      //console.log(ArrPow(arr3))
+      console.log(
+        "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+      );
+      let res = [];
+      function ArrTo1d(arr3) {
+        for (let el of arr3) {
+          if (typeof el == "object") {
+            ArrTo1d(el);
+          } else {
+            res.push(el);
+          }
+        }
+        //    console.log(res)
+        return res;
+      }
+      console.log(ArrTo1d(arr3));
+      // ArrTo1d(arr3)
+      console.log(
+        "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+      );
+
+      function func3(arr) {
+        for (let elem of arr) {
+          if (typeof elem == "object") {
+            func(elem);
+          } else console.log(elem);
+        }
+      }
+      func3(arr3);
+    </script>
+  </body>
+</html>

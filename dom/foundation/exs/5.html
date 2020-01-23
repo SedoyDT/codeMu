@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="buttonClick()">Нажми на меня</button>
+<input type="text" id="input1" value="!!!"><input type="text" id="input2" value="???">
+
+<script>
+ function buttonClick(){
+     let in1 = document.getElementById("input1")
+     let in2 = document.getElementById("input2")
+     let swap;
+     swap = in1.value
+     in1.value = in2.value
+    in2.value = swap
+
+
+ }
+</script>
+</body>
+</html>

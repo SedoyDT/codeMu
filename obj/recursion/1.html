@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    // let arr = [1, 2, 3]
+    //          function getSum(arr){
+    //              let sum = arr.shift()
+
+    //              if (arr.length != 0){
+    //                  sum += getSum(arr)
+
+    //              }
+    //              return sum
+    //          }
+    //          console.log(getSum(arr))
+    
+    
+    
+    // function fibo(prevPrevNum,prevNum){
+    //     return  prevNum - prevPrevNum < 1 ?  1 : fib(prevPrevNum,prevNum -1) + fib(prevPrevNum,prevNum-2)
+        
+        
+    // }
+
+
+    function fib(n){
+        let a1 =1;
+        let b= 1;
+        for (let i =3;i<=n;i++){
+            let c= a1 + b
+            a1= b
+            b= c
+        }
+        return b
+        
+    }
+    function f (n){
+        return n <= 1 ? n : f(n - 1) + f (n-2)
+    }
+   console.log(f(3))
+   console.log(fib(7))
+   console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+   
+    
+ let i = 1;
+function fibo(a,b){
+	i++
+    console.log(a+b)
+	
+	if (i <= 10){
+		fibo(b,a+b); // здесь функция вызывает сама себя
+	}
+}
+fibo(1,2);
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+
+let j =1;
+ let arr =[]
+ function fibo2(a,b){
+	j++
+    arr.push(a+b)
+	 
+	if (j <= 10){
+		fibo2(b,a+b); // здесь функция вызывает сама себя
+	    return arr
+    }
+    
+}
+console.log(fibo2(1,2))
+// console.log(fibo2(3,5))
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+console.log('<><><><><><><><><><><><><><><><><><>><><>Р Е Д У Ц И Р О В А Н И Е Ч И С Л А <><><><><><><><><><><><><><><><><><><>');
+// function fibo3(a,b){
+//     let j =1;
+//     let arr =[]
+//    return  (a,b )=> {
+//         j++
+//     arr.push(a+b)
+	 
+// 	if (j <= 10){
+// 		fibo2(b,a+b); // здесь функция вызывает сама себя
+// 	    return arr
+//     }
+//      }
+
+
+// }
+// console.log(fibo3(1,2))
+
+// function fibo4(a,b){
+//     let j =1;
+//  let arr =[]
+//  function fibo3(a,b){
+// 	j++
+//     arr.push(a+b)
+	 
+// 	if (j <= 10){
+// 		fibo2(b,a+b); // здесь функция вызывает сама себя
+// 	    return arr
+//     }
+    
+// }
+// return fibo3(a,b)
+// }
+// console.log(fibo4(1,3))
+
+function getDigitsSum (num){
+    return getSum(getDigits(num))
+}
+function getSum (arr){
+    let sum = 0;
+
+    for (let elem of arr){
+        sum += Number(elem)
+    }
+    return sum
+}
+
+function getDigits(num){
+    return String(num).split('')
+}
+function reduceNum(num){
+    let sum = getDigitsSum(num)
+
+    if (sum <= 9){
+        return sum
+    }else {
+        return reduceNum(sum)
+    }
+}
+console.log('Давайте разберемся, как это работает.Функция  reduceNum вызывает функцию getDigitsSum');
+console.log(reduceNum(218721872187218721872))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Выведите на экран элемент 'b2' и элемент 'c1'.
+
+
+    </p>
+    <script>
+        let obj = {
+	1: {
+		1: 'a1',
+		2: 'a2',
+		3: 'a3',
+	},
+	2: {
+		1: 'b1',
+		2: 'b2',
+		3: 'b3',
+	},
+	3: {
+		1: 'c1',
+		2: 'c2',
+		3: 'c3',
+	},
+}
+for( keys in obj){
+    console.log(keys)
+}
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys of Object.keys(obj)){
+    console.log(keys)
+}
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys of Object.values(obj)){
+    console.log(keys)
+    
+}
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys of Object.values(obj)){
+    console.log(JSON.stringify(keys))
+}
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys in Object.values(obj)){
+    for (key of Object.values(keys)){
+        console.log(key)
+    }
+}
+console.log("/////////////////////////////////////////////////////////////////")
+console.log("Решение 1")
+for( keys of Object.values(obj)){
+    for (let key of Object.values(keys)){
+        if (key == "b2")
+        console.log(key)
+        else if (key == "c1")
+        console.log(key)
+
+    }
+}
+        </script>
+</body>
+</html>

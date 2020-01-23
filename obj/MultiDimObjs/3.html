@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Найдите сумму всех элементов-чисел.
+
+
+    </p>
+    <script>
+    let obj = {
+	key1: {
+		a: 1, b: 2, c: {
+			d: 3,
+			e: 4,
+		}, f: 5,
+	},
+	key2: {
+		g: 6, h: 7,
+	},
+}
+
+let arr = Object.values(obj)
+console.log(arr)
+console.log("///////////////////////////////////////////////////////")
+
+let arr2 = Object.keys(obj)
+console.log(arr2)
+console.log("///////////////////////////////////////////////////////")
+let arr3 = Object.entries(obj)
+console.log(arr3)
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+console.log('С С Ы Л К А__Н А__П Р И М Е Р:   https://learn.javascript.ru/keys-values-entries      ');
+let prices = {
+  banana: 1,
+  orange: 2,
+  meat: 4,
+};
+
+let doublePrices = Object.fromEntries(
+  // преобразовать в массив, затем map, затем fromEntries обратно объект
+  Object.entries(prices).map(([key, value]) => [key, value * 2])
+);
+
+console.log(doublePrices.meat); // 8
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+console.log('С С Ы Л К А__Н А__П Р И М Е Р:  https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/entries       ');
+const object1 = {
+  a: 'somestring',
+  b: 42
+};
+
+for (let [key, value] of Object.entries(object1)) {
+  console.log(`${key}: ${value}`);
+}
+
+// expected output:
+// "a: somestring"
+// "b: 42"
+// order is not guaranteed
+
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');    
+
+    </script>
+</body>
+</html>

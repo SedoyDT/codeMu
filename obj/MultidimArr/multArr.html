@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    let arr =[
+	[
+		[1, 2],
+		[3, 4],
+	],
+	[
+		[5, 6],
+		[7, 8],
+	],
+];
+let count = 0;
+for (let key of arr){
+   // console.log(key)
+    for (let els of key)
+     for (let el of els)
+    count += el
+}
+console.log(count)
+let arr2 = [
+    [
+ 1, 2, 3, 
+        [4, 5,
+         [6, 7]
+        ]
+    ], 
+    [
+        8, [9, 10]
+    ]
+];
+// не доходит до 9 10
+let i = 0
+function sumEls(arr2,i){
+   
+   for ( i ; i < arr2.length;i++){
+    let count = 0
+              if (Array.isArray[i]){
+                  return sumEls(arr2,i)
+              }     else  count += arr2[i]
+   }
+   return count
+}
+console.log(sumEls(arr2,i))
+
+// let i = 0
+// function pereborEls(arr2,i){
+//    let count = 0
+//    for ( i ; i < arr2.length;i++){
+//               if (Array.isArray[i]){
+//                   return sumEls(arr2,i)
+//               }     else  count += arr2[i]
+//    }
+//    return count
+// }
+
+// console.log(pereborEls(arr2,i))
+var arr3 = [1, 2, 3, 4, 5]
+const sum = arr2 => arr2.reduce((res, el) => res + (Array.isArray(el) ? sum(el) : el), 0);
+const sum2 = arr3 => arr3.reduce((res, el) => res + el, 0);
+
+console.log(sum(arr2));
+console.log(sum2(arr3));
+    </script>  
+</body>
+</html>

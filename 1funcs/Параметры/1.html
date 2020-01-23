@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function kub(n){
+        let res = 1;
+        for (let i =1;i<=3;i++)
+        res *= n
+        return res
+    }
+    alert(kub(51))
+
+    function isPositive(num){
+        if (num >= 0){
+            alert("+++")
+
+        }else  alert("---")
+    }
+    isPositive(-1)
+
+    function summ(n,nn,nnn){
+        return n + nn + nnn
+    }
+    alert(summ(1,2,3))
+
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+
+    function f (name = "Аноним"){
+        alert ("Ваше имя:" + name)
+    }
+    f("Анатолий ")
+    f()
+    console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+    function f1(name = 'Аноним', age = 'неизвестен'){
+        alert("Ваше имя:"+ name + " ваш возраст: "+ age)
+    }
+    f1("Анатолий",21)
+    f1("НеАнатолий",)
+    f1(21)
+    console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+    function f2(num = 5){
+        alert(num * num)
+    }
+    f2()
+    f2(2)
+    f2(3)
+    </script>
+</body>
+</html>

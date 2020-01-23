@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<input type="submit" onclick="alert('!')">
+<input type="submit" id = "2 " onclick="func1(); func2();">
+
+<!--  -->
+<input type="text" value="!" id="test">
+<input type="submit" onclick="func(); func3()">
+<body>
+    <script>
+    function func1() {
+	alert('1');
+}
+
+function func2() {
+	alert('2');
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+function func(){
+    let elem= document.getElementById('test')
+    alert(elem.value);
+    alert(elem.id); //выведет 'test'
+	alert(elem.type); //выведет 'text'
+    elem.value = 'www'
+    alert(elem.value);
+
+}
+function func3() {
+	document.getElementById('test').value = 'www';
+	document.getElementById('test').type = 'submit';
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        console.log('С С Ы Л К А__Н А__П Р И М Е Р: http://code.mu/ru/javascript/prime/multidimensionality/iteration-of-multi-structures/        ');
+        let users = [
+	{
+		name: 'name1',
+		age: 31,
+	},
+	{
+		name: 'name2',
+		age: 32,
+	},
+	{
+		name: 'name3',
+		age: 33,
+	},
+];
+for (let user of users) {
+	document.write(user.name + ' ' + user.age + '<br>'); // name1 31 // name2 32 // name3 33
+
+}
+
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        let employees = [
+	{
+		name: 'name1',
+		salary: 300,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+	},
+];
+let count = 0
+document.write("<br/>")
+for (let em of employees){
+    document.write(em.name + " " + em.salary + "<br/>") // name1 300 name2 400 name3 500
+    count +=em.salary
+}
+document.write("Count salaryes " + count)
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+
+let employees2 = [
+	{
+		name: 'name1',
+		salary: 300,
+		age: 28,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+		age: 29,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+		age: 30,
+	},
+	{
+		name: 'name4',
+		salary: 600,
+		age: 31,
+	},
+	{
+		name: 'name5',
+		salary: 700,
+		age: 32,
+	},
+];
+count = 0
+for (let em of employees2){
+    if (em.age >= 30) {
+        count += em.salary
+}}
+document.write("Count employees salaryes older 30 " + count )
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let employees3 = [
+	{
+		name: 'name1',
+		salary: 300,
+		dismissed: false,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+		dismissed: true,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+		dismissed: false,
+	},
+	{
+		name: 'name4',
+		salary: 600,
+		dismissed: true,
+	},
+	{
+		name: 'name5',
+		salary: 700,
+		dismissed: false,
+	},
+];
+count = 0
+document.write("<br/>");
+
+for (let em of employees3) {
+   if (em.dismissed == false) count += em.salary
+}
+document.write(count);                          
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><> С Л О Ж Н Ы Е С Т Р У К Т У Р Ы  <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+console.log('С С Ы Л К А__Н А__З А Д А Ч У:         ');
+let students = {
+	'group1': ['student11', 'student12', 'student13'],
+	'group2': ['student21', 'student22', 'student23'],
+	'group3': ['student31', 'student32'],
+}
+for (let group in students) {
+	for (let name of students[group]) {
+		console.log(name);
+	}
+}
+console.log('С помощью вложенных циклов выведите на экран все строки с данными.');
+let data = {
+	1: [
+		'data11',
+		'data12',
+		'data13',
+	],
+	2: [
+		'data21',
+		'data22',
+		'data23',
+	],
+	3: [
+		'data31',
+		'data32',
+		'data33',
+		'data34',
+		'data35',
+	],
+	4: [
+		'data41',
+		'data42',
+	],
+};
+for (let ob in data){
+    for (let day of data[ob]){
+        console.log(day)
+    }
+
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let data2 = [
+	{
+		1: 'data11',
+		2: 'data12',
+		3: 'data13',
+		4: 'data14',
+	},
+	{
+		1: 'data21',
+		2: 'data22',
+		3: 'data33',
+	},
+	{
+		1: 'data31',
+		2: 'data32',
+	},
+];        
+       for (let days of  data2){
+          
+          for (let subData of Object.values(days)){
+              console.log(subData)
+          }
+          
+       }
+       console.log('<><><><><><><><><><><><><><><><><><><             ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+       
+       for (let days in data2){
+         let SubObj =  data2[days]
+         for (day in SubObj){
+             console.log(SubObj[day])
+         }
+       }
+    console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+    let data3 = [
+	{
+		1: [
+			'data111',
+			'data112',
+			'data113',
+		],
+		2: [
+			'data121',
+			'data122',
+			'data123',
+		],
+	},
+	{
+		1: [
+			'data211',
+			'data212',
+			'data213',
+		],
+		2: [
+			'data221',
+			'data222',
+			'data223',
+			'data224',
+		],
+		3: [
+			'data231',
+			'data232',
+			'data233',
+			'data234',
+			'data235',
+		],
+	},
+	{
+		1: [
+			'data411',
+			'data412',
+			'data413',
+		],
+		2: [
+			'data421',
+		],
+	},
+];
+for (let objs of data3){
+    for (let arrs in objs){
+       for (els of objs[arrs]){
+           console.log(els)
+       }
+    }
+}
+        </script>
+</body>
+</html>

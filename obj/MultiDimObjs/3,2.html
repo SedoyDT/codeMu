@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let prices = {
+  banana: 1,
+  orange: 2,
+  meat: 4,
+};
+let obj = {
+	key1: {
+		a: 1, b: 2, c: {
+			d: 3,
+			e: 4,
+		}, f: 5,
+	},
+	key2: {
+		g: 6, h: 7,
+	},
+}
+let doublePrices = Object.fromEntries(
+  // преобразовать в массив, затем map, затем fromEntries обратно объект
+  Object.entries(obj.key2).map(([key, value]) => [key, value * 2])
+);
+//console.log(doublePrices)
+let doublePrices2 = function(){
+  // преобразовать в массив, затем map, затем fromEntries обратно объект
+ return Object.entries(obj.key1).map(([key, value]) => [key, value * 2])
+}
+let doublePrices3 = Object.fromEntries(
+  // преобразовать в массив, затем map, затем fromEntries обратно объект
+  Object.entries(obj.key2).map((num) => num)
+);
+let doublePrices4 = Object.fromEntries(
+  // преобразовать в массив, затем map, затем fromEntries обратно объект
+  Object.entries(obj).map((num) => num)
+);
+console.log(doublePrices)
+console.log(doublePrices3)
+console.log(doublePrices4)
+console.log(doublePrices2())
+        </script>
+</body>
+</html>

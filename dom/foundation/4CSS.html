@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="!" id="test">
+<input type="submit" onclick="func();func2();func3()">
+
+<script>
+  function func() {
+	let elem = document.getElementById('test');
+	elem.style.color = 'red';
+}
+function func2() {
+	var elem = document.getElementById('test');
+	elem.style.fontSize = '15px';
+}
+function func3() {
+	var elem = document.getElementById('test');
+	elem.style.mozBoxSizing = 'border-box';
+}
+</script>
+</body>
+</html>

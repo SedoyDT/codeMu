@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+    console.log('С С Ы Л К А__Н А__П Р И М Е Р:  http://code.mu/ru/javascript/prime/multidimensionality/conversion-of-multi-structures/       ');
+    let users = [
+	{
+		id: 11,
+		name: 'name11',
+		surname: 'surname11',
+	},
+	{
+		id: 14,
+		name: 'name14',
+		surname: 'surname14',	
+	},
+	{
+		id: 17,
+		name: 'name17',
+		surname: 'surname17',
+	},
+];
+let result = {}
+
+for (let user of users){
+    result[user.id]= user
+}
+console.log(users)
+console.log(result);
+
+// {
+// 	11: {
+// 		id: 11,
+// 		name: 'name11',
+// 		surname: 'surname11',
+// 	},
+// 	14: {
+// 		id: 14,
+// 		name: 'name14',
+// 		surname: 'surname14',
+// 	},
+// 	17: {
+// 		id: 17,
+// 		name: 'name17',
+// 		surname: 'surname17',
+// 	},
+// }
+    console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+    let data = [
+	{
+		country: 'Россия',
+		city:    'Москва',
+	},
+	{
+		country: 'Беларусь',
+		city:    'Минск',
+	},
+	{
+		country: 'Россия',
+		city:    'Питер',
+	},
+	{
+		country: 'Россия',
+		city:    'Владивосток',
+	},
+	{
+		country: 'Украина',
+		city:    'Львов',
+	},
+	{
+		country: 'Беларусь',
+		city:    'Могилев',
+	},
+	{
+		country: 'Украина',
+		city:    'Киев',
+	},
+]
+let result2 = {}
+    for (let country of data){
+     result2[country.country] = []
+     for (let c of data){
+         if (country.country == c.country){
+             result2[country.country].push(c.city)
+         }
+     }
+}console.log(result2)
+ console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let result3 = {}
+let events = [
+	{
+		date:  '2019-12-29',
+		event: 'name1'
+	},
+	{
+		date:  '2019-12-31',
+		event: 'name2'
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name3'
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name4'
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name5'
+	},
+	{
+		date:  '2019-12-31',
+		event: 'name6'
+	},
+	{
+		date:  '2019-12-29',
+		event: 'name7'
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name8'
+	},
+	{
+		date:  '2019-12-30',
+		event: 'name9'
+	},
+]
+for (let d of events){
+    result3[d.date]= []
+    for (let event of events ){
+        if (d.date == event.date){
+            result3[d.date].push(event.event)
+        }
+
+    }
+}
+
+console.log(result3)
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let events2 = {
+	'2019-12-29': ['name1', 'name3', 'name5', 'name7'],
+	'2019-12-30': ['name4', 'name8', 'name9'],
+	'2019-12-31': ['name2', 'name6'],
+}
+
+let result4=[]
+for (let date in events2){
+    //  result4.push({date})
+     for (let event of events2[date]){
+        result4.push({date, event})
+     }
+}
+    
+    console.log(result4)
+    </script>
+</body>
+</html>
+<!-- {
+	'Россия': ['Москва', 'Питер', 'Владивосток',],
+	'Беларусь': ['Минск', 'Могилев'],
+	'Украина': ['Киев', 'Львов'],
+} -->

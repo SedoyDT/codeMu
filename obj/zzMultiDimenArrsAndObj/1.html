@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        console.log('С С Ы Л К А__Н А__П Р И М Е Р: http://code.mu/ru/javascript/prime/multidimensionality/multi-structures/        ');
+        let users = [
+	{
+		name: 'name1',
+		age: 31,
+	},
+	{
+		name: 'name2',
+		age: 32,
+	},
+	{
+		name: 'name3',
+		age: 33,
+	},
+];
+console.log(users[1]); // выведет {name: 'name2', age: 32}
+console.log(users[1]['name']); // выведет 'name2'
+console.log(users[1].name); // выведет 'name2'
+
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><> З А Г О Л О В О К_Ф А Й Л А <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        console.log('С С Ы Л К А__Н А__З А Д А Ч У:         ');
+        let employees = [
+	{
+		name: 'name1',
+		salary: 300,
+	},
+	{
+		name: 'name2',
+		salary: 400,
+	},
+	{
+		name: 'name3',
+		salary: 500,
+	},
+];
+console.log('Выведите на экран сумму зарплат первого и второго работников.');
+
+console.log(employees[1]['salary'] + employees[2]['salary']);
+
+
+let students = {
+	'boys':  ['Коля', 'Вася', 'Петя'],
+	'girls': ['Даша', 'Маша', 'Лена'],
+};
+let name = prompt ("boys or girls")
+let num = prompt ("0 or 1 or 2")
+console.log('Выведите на экран элемент Вася и элемент Лена');
+console.log(students['boys'][1]);
+console.log(students['girls'][2]);
+console.log(students[name][num]);
+
+        </script>
+</body>
+</html>

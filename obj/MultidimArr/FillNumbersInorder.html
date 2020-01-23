@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+let arr = [];
+
+for (let i = 0, k = 1; i < 4; i++) {
+	arr[i] = [];
+	
+	for (let j = 0; j < 2; j++) {
+		arr[i][j] = k++;
+	}
+}
+
+console.log(arr);
+let arr2 = [];
+let k = 0;
+for (let i = 0; i < 4;i++){
+    arr2[i] = []
+    for (let j=0;j<3;j++){
+        arr2[i][j]= k+2
+        k += +2
+    } 
+}
+console.log(arr2)
+// let arr3 = []
+// let m=1;
+// for (let i = 0;i<2;i++){
+//     arr3[i]=[]
+//     for(let j=0;j<2;j--){
+//         arr3[i][j] = []
+//         for(let k = 0;k<2;k++){
+//             arr3[i][j][k]= m++
+//         }
+//     }
+// }
+// console.table(arr3)
+
+        </script>
+</body>
+</html>

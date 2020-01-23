@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Найдите сумму элементов приведенного объекта.
+
+
+    </p>
+    <script>
+        let obj = {
+	key1: {
+		key1: 1,
+		key2: 2,
+		key3: 3,
+	},
+	key2: {
+		key1: 4,
+		key2: 5,
+		key3: 6,
+	},
+	key3: {
+		key1: 7,
+		key2: 8,
+		key3: 9,
+	},
+}
+ let count = 0;
+for (keys of Object.values(obj)){
+for (key of Object.values(keys)){
+    count += key
+}
+}
+console.log("Решение 1")
+
+console.log (count) // выведет сумму 45
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys of Object.values(obj)){
+    console.log(keys) // Object Object Object
+}
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys of Object.values(obj)){
+    console.log(JSON.stringify(keys)) // {"key1":1,"key2":2,"key3":3}  {"key1":4,"key2":5,"key3":6} {"key1":7,"key2":8,"key3":9}
+}
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys of Object.keys(obj)){
+    console.log(keys) // key1 key2 key3
+}
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys of Object.keys(obj)){
+    console.log(JSON.stringify(keys))//" key1" "key2" "key3"
+}
+console.log("/////////////////////////////////////////////////////////////////")
+for( keys of Object.entries(obj)){
+    console.log(keys) // Array(2) Array(2) Array(2)
+}
+        </script>
+</body>
+</html>

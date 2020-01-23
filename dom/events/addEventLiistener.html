@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table id="outside">
+        <tr><td id="t1">один</td></tr>
+        <tr><td id="t2">два</td></tr>
+    </table>
+    <table id="outside2">
+        <tr><td id="t3">один</td></tr>
+        <tr><td id="t4">два</td></tr>
+    </table>
+    <table id="outside3">
+        <tr><td id="t5">one</td></tr>
+        <tr><td id="t6">two</td></tr>
+    </table>
+    <!-- // -->
+    <b id='x'>123</b>
+    <b id='x'>321</b>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        </ul>
+        <div id='result'></div>
+    <script>
+            function modifyText(){
+                let t2= document.getElementById('t2');
+                if (t2.firstChild.nodeValue = 'три'){
+                    t2.firstChild.nodeValue = 'два'
+                }else {
+                    t2.firstChild.nodeValue = 'три'
+                }
+            }
+
+            let el = document.getElementById('outside2')
+            el.addEventListener('click', modifyText2, false)
+            function modifyText2(new_text) {
+                  let t2 = document.getElementById('t4')
+                  t2.firstChild.nodeValue = new_text
+            }
+            el = document.getElementById("outside2")
+            el.addEventListener('click', function(){modifyText2('ЗДЕСЬ ТЕКСТ НА КОТОРЫЙ МЕНЯЕТСЯ ЗНАЧЕНИЕ В ТАБЛИЦЕ ПРИ КЛИКЕ')},)
+
+            // Function to change the content of t2
+function modifyText3(new_text) {
+  let t2 = document.getElementById("t6");
+  t2.firstChild.nodeValue = new_text;    
+}
+ 
+// Add event listener to table with an arrow function
+let elem = document.getElementById("outside3");
+elem.addEventListener("click", () => { modifyText3("four"); }, false);
+
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+
+let list = document.getElementsByTagName('b');
+for (let i=0;i<list.length;i++){
+  if(list[i].id=='x'){
+    alert(list[i].innerHTML)
+  }
+}
+let ul = document.getElementsByTagName('li');
+for (let i =0;i<ul.length;i++){
+  if (ul[i]["id"] == ' '){
+  ul[i].id = i
+  }
+}
+// for (let i =0;i<ul.length+1;i++){
+//   if (ul[i]["id"] == i){
+//   alert(ul[i].innerHTML );
+//   }
+// }
+
+    </script>
+</body>
+</html>

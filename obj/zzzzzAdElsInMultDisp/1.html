@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        console.log('С С Ы Л К А__Н А__П Р И М Е Р: http://code.mu/ru/javascript/prime/multidimensionality/adding-elements-into-multi-objects/        ');
+        let students = {
+	'group1': ['student11', 'student12', 'student13'],
+	'group2': ['student21', 'student22', 'student23'],
+	'group3': ['student31', 'student32'],
+};
+
+students.group1.push('student14'); // Давайте добавим еще одного студента в первую группу:
+students.group4 = []; // Создаем группу 
+students.group4.push('student41'); // Добавляем студента 
+
+
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        let affairs = {
+	'2019-12-28': ['дело11', 'дело12', 'дело13'],
+	'2019-12-39': ['дело21', 'дело22', 'дело23'],
+	'2019-12-30': ['дело31', 'дело32', 'дело33'],
+}
+affairs['2019-12-29'] = []
+affairs['2019-12-29'].push('дело41')
+affairs['2019-12-31'] = []
+affairs['2019-12-31'].push('дело42')
+affairs['2019-12-31'].push('дело43')
+for (let dates in affairs){
+  //  console.log(affairs[dates])
+   for (affs of affairs[dates]){
+       console.log(affs)
+   }
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let students2 = {
+	'group1': {
+		'subgroup11': ['student111', 'student112', 'student113'],
+		'subgroup12': ['student121', 'student122', 'student123'],
+	},
+	'group2': {
+		'subgroup21': ['student211', 'student212', 'student213'],
+		'subgroup22': ['student221', 'student222', 'student223'],
+	},
+	'group3': {
+		'subgroup31': ['student311', 'student312', 'student313'],
+		'subgroup32': ['student321', 'student322', 'student323'],
+	},
+};
+// добавляем студента 
+students2['group1']['subgroup11'].push("student114")
+// добавляем в первую группу еще одну подгруппу
+students2['group1']['subgroup13']= []
+// Сделайте четвертую группу, в ней сделайте подгруппу и добавьте в нее двух новых студентов.
+
+
+students2['group4'] = {}
+students2['group4']['subgroup41'] = []
+students2['group4']['subgroup41'].push('student411')
+students2['group4']['subgroup41'].push('student412')
+
+for (let groups in students2){
+    console.log("Группа " + groups)
+     let group = students2[groups]
+     for (let subgroup in group){
+       console.log(" Подгруппа "+ subgroup) 
+      let stud = group[subgroup]
+         for (let student of stud ){
+             console.log(student)
+         }
+    }
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+console.log('С С Ы Л К А__Н А__П Р И М Е Р: http://code.mu/ru/javascript/prime/multidimensionality/adding-elements-into-multi-objects/        ');
+let students3 = {
+	'group1': ['student11', 'student12', 'student13'],
+	'group2': ['student21', 'student22', 'student23'],
+	'group3': ['student31', 'student32'],
+};
+
+addStudent('group1', 'student14');
+addStudent('group4', 'student41');
+
+console.log(students3);
+
+function addStudent(group, name) {
+	if (students3[group] === undefined) {
+		students3[group] = [];
+	}
+	
+	students3[group].push(name);
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let affairs2 = {
+	'2019-12-28': ['дело11', 'дело12', 'дело13'],
+	'2019-12-39': ['дело21', 'дело22', 'дело23'],
+	'2019-12-30': ['дело31', 'дело32', 'дело33'],
+}
+AddAffair('2019-12-39','дело14')
+AddAffair('2019-12-10','дело04')
+console.log(affairs2)
+function AddAffair(date,affair){
+    if (affairs2[date] == undefined){
+        affairs2[date] = []
+    }
+    affairs2[date].push(affair)
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let students4 = {
+	'group1': {
+		'subgroup11': ['student111', 'student112', 'student113'],
+		'subgroup12': ['student121', 'student122', 'student123'],
+	},
+	'group2': {
+		'subgroup21': ['student211', 'student212', 'student213'],
+		'subgroup22': ['student221', 'student222', 'student223'],
+	},
+	'group3': {
+		'subgroup31': ['student311', 'student312', 'student313'],
+		'subgroup32': ['student321', 'student322', 'student323'],
+	},
+};
+AddStudent('group1','subgroup11','student113')
+AddStudent('group4','subgroup11','student411')
+AddStudent('group1','subgroup13','student131')
+
+console.log(students4)
+
+function AddStudent(group,subgroup,student){
+    if( students4[group] == undefined) students4[group] = {}
+    if( students4[group][subgroup] == undefined) students4[group][subgroup] = []
+
+    students4[group][subgroup].push(student)
+}
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let affairs3 = {
+	2018: {
+		11: {
+			29: ['дело111', 'дело112', 'дело113'],
+			30: ['дело121', 'дело122', 'дело123'],
+		},
+		12: {
+			30: ['дело211', 'дело212', 'дело213'],
+			31: ['дело221', 'дело222', 'дело223'],
+		},
+	},
+	2019: {
+		12: {
+			29: ['дело311', 'дело312', 'дело313'],
+			30: ['дело321', 'дело322', 'дело323'],
+			31: ['дело331', 'дело332', 'дело333'],
+		}
+	},
+}
+AdddAffair(2018,11,29,"дело114")
+AdddAffair(2020,11,29,"дело411")
+AdddAffair(2019,12,29,"дело314")
+console.log(affairs3)
+for (year in affairs3){
+    let month = affairs3[year]
+    console.log(" month")
+    console.log( month)
+    for (let day in month){
+        let d = month[day]
+        console.log("d")
+        console.log(d)
+        for (let aff in d){
+           console.log(d[aff])
+            for (af of d[aff]){
+                console.log(af)
+            }
+        }
+    }
+}
+function AdddAffair(year,month,day,aff){
+    if (affairs3[year] == undefined) affairs3[year] = {}
+    if (affairs3[year][month] == undefined) affairs3[year][month] = {}
+    if (affairs3[year][month][day] == undefined) affairs3[year][month][day] = []
+
+    affairs3[year][month][day].push(aff)
+
+}
+
+        </script>
+</body>
+</html>

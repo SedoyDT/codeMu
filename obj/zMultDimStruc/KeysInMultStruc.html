@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><>Ключи из переменных в многомерных структурах JavaScript<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+    console.log('С С Ы Л К А__Н А__З А Д А Ч У:  http://code.mu/ru/javascript/prime/multidimensionality/keys-from-vars/       ');
+    let obj = {
+	'ru': ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+	'en': ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'],
+};
+console.log(obj.ru[3]);
+console.log(obj['ru'][3]);
+console.log('Пусть теперь язык и номер дня хранятся в переменных:');
+let lang = 'ru'
+let day = 3
+console.log(obj[lang][day])
+
+let months = {
+	'ru': [
+		'январь',
+		'февраль',
+		'март',
+		'апрель',
+		'май',
+		'июнь',
+		'июль',
+		'август',
+		'сентябрь',
+		'октябрь',
+		'ноябрь',
+		'декабрь',
+	],
+	'en': [
+		'january',
+		'february',
+		'march',
+		'april',
+		'may',
+		'june',
+		'july',
+		'august',
+		'september',
+		'october',
+		'november',
+		'december',
+	],
+};
+let month = prompt("Какой месяц от 0 до 12 вы хотите вывести? ")
+let lg = prompt ("Какой язык en - Английский ru - Русский ")
+console.log(months[lg][month])
+let affairs = {
+	'2018': {
+		11: {
+			29: ['дело111', 'дело112', 'дело113'],
+			30: ['дело121', 'дело122', 'дело123'],
+		},
+		12: {
+			30: ['дело211', 'дело212', 'дело213'],
+			31: ['дело221', 'дело222', 'дело223'],
+		},
+	},
+	'2019': {
+		12: {
+			29: ['дело311', 'дело312', 'дело313'],
+			30: ['дело321', 'дело322', 'дело323'],
+			31: ['дело331', 'дело332', 'дело333'],
+		}
+	},
+}
+console.log("Пусть даны также 3 переменные, содержащие год, месяц и день. Выведите дело, соответствующее значениям переменных.")
+ let y = prompt("Введите год дела")       
+ let m = prompt("Введите месяц дела")       
+ let d = prompt("Введите день дела")  
+ console.log(affairs[y][m][d]);
+      
+        </script>
+</body>
+</html>

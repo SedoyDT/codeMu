@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>     П Р И М Е Р      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        console.log('С С Ы Л К А__Н А__П Р И М Е Р:    http://code.mu/ru/javascript/prime/multidimensionality/adding-elements-into-multi-arrays/     ');
+        let users = [
+	{
+		name: 'name1',
+		age: 31,
+	},
+	{
+		name: 'name2',
+		age: 32,
+	},
+	{
+		name: 'name3',
+		age: 33,
+	},
+];
+users.push({
+	name: 'name4',
+	age: 34,
+});
+for (let user of users){
+    console.log(user) // Object Object Object Object
+}
+        console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><>    К О Н Е Ц _ П Р И М Е Р А      <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+        let users2 = [
+	{
+		name: 'name1',
+		surname: 'surname1',
+		age: 30,
+	},
+	{
+		name: 'name2',
+		surname: 'surname2',
+		age: 31,
+	},
+	{
+		name: 'name2',
+		surname: 'surname2',
+		age: 32,
+	},
+];
+users2.push({
+    name: 'name3',
+		surname: 'surname3',
+		age: 42,
+})
+for (let user of users2){
+    console.log(user) // Object Object Object Object
+}
+        </script>
+</body>
+</html>

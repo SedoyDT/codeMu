@@ -1,0 +1,5 @@
+let math = require('./math')
+console.log(math.square(4))
+console.log(math.cube(4))
+console.log(math.cube("f"))
+console.log(math.qua("4"))

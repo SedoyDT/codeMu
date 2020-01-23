@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><> З А Д А Ч А <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+console.log('С С Ы Л К А__Н А__З А Д А Ч У:  http://code.mu/ru/javascript/prime/multidimensionality/iteration-of-multi-objects/       ');
+let obj = {
+	1: {
+		1: 11,
+		2: 12,
+		3: 13,
+	},
+	2: {
+		1: 21,
+		2: 22,
+		3: 23,
+	},
+	3: {
+		1: 24,
+		2: 25,
+		3: 26,
+	},
+}
+let count = 0
+for (let keys in obj){
+    let subObj = obj[keys]
+    for (SubKey in subObj){
+      count += subObj[SubKey]
+    }
+}
+console.log(count);
+
+        </script>
+</body>
+</html>
