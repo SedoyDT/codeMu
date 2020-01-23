@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        {{ message1 }}
+        {{ message2 }}
+    </div>
+    <div id="appp">
+        {{name}}
+        {{surname}}
+    </div>
+    <div id="apl">
+        {{ var0 + var1}}
+    </div>
+    <div id="aps">  
+        {{num * num }}
+    </div>
+    <div id="lap">  
+        {{num1 + num2 + num3}}
+    </div>
+  </body>
+  <script>
+  let app = new Vue({
+	el: '#app',
+	data: {
+		message1: 'hello1',
+		message2: 'hello2',
+	},
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><>Операции в скобках><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let appp = new Vue({
+    el:'#appp',
+    data: {
+        name: 'Вася',
+        surname: "Иванов",
+    }
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 1<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let apl = new Vue({
+    el: '#apl',
+    data: {
+        var0: 1,
+        var1: 2,
+    }
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 3<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let aps = new Vue({
+    el: "#aps",
+    data: {
+        num: 5,
+    }
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let lap = new Vue({
+    el: "#lap",
+    data: {
+        num1: 1, 
+        num2: 2, 
+        num3: 3 
+
+    }
+})
+
+
+  </script>
+</html>

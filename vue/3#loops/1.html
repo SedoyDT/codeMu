@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for='item in items'>
+            {{   item   }}
+        </li>
+    </ul>
+</div>   
+<div id="app2">
+    <ul>
+        <li v-for='item in arr'>
+            {{item}}
+        </li>
+    </ul>
+</div>
+<div id="loop">
+    <ul>
+        <li v-for="(item,index) in items">{{item}} - {{index}}</li>
+    </ul>
+</div>
+<div id="nameArr">
+    <ul>
+        <li v-for="(item,index) in items">
+            {{item}} - {{index}}
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+let app = new Vue({
+	el: '#app',
+	data: {
+		items: ['a', 'b', 'c', 'd', 'e'],
+	},
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 1<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app2= new Vue({
+    el:'#app2',
+    data:{
+        arr: [1,2,3,4,5]
+
+    }
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><>ВАРИАНТЫ ЦИКЛОВ<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let loop = new Vue({
+    el: "#loop",
+    data: {
+        items: ['a','b','c','d','e'],
+    }
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 2<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let nameArr = new Vue({
+    el: "#nameArr",
+    data: {
+        items: ['user1', 'user2', 'user3'],
+    }
+})
+
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+    <title>Document</title>
+</head>
+<body>
+    <div id="arr">
+           {{arr[0]}}
+           {{arr[1]}}
+           {{arr[2]}}
+    </div>
+    <div id="obj">
+        {{obj['a']}}
+        {{obj['b']}}
+        {{obj['c']}}
+        {{obj.a}}
+        {{obj.b}}
+        {{obj.c}}
+    </div>
+   <div id="arr2">
+       {{arr[0] + arr[1] + arr[2]}}
+   </div>
+   <div id="obj2">
+       {{obj['a'] + obj.b + obj.c}}
+   </div>
+</body>
+<script>    
+    let app = new Vue({
+        el: '#arr',
+        data:{
+            arr: [1,2,3],
+        },
+    });
+    let obj = new Vue({
+        el: "#obj",
+        data: {
+            obj: {a: 1,b: 2,c: 3},
+        }
+    })
+    console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><ЗАДАЧА 1><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+       let arr2 = new Vue({
+           el: "#arr2",
+           data: {
+               arr: [1,2,3],
+           }
+       })
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 5<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let obj2 = new Vue({
+    el: "#obj2",
+    data: {
+        obj: {a: 1, b: 2, c: 3},
+    }
+})
+    </script>
+</html>
