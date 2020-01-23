@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <ul>
+            <li v-for="(value, key, index) in users">
+                {{ key }} - {{ value }} - {{ index }}
+            </li>
+        </ul>
+    </div>
+    <div id="app2">
+        <ul>
+            <li v-for="(value, key, index) in employees">
+                {{ value }}
+            </li>
+        </ul>
+    </div>
+    <div id="app3">
+        <ul>
+            <li v-for="(value, key, index) in employees">
+                {{ key }} - {{ value }} - {{ index + 1 }}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+let app = new Vue({
+    el: '#app',
+    data: {
+        users: {user1: '300$', user2: '400$', user3: '500$'},
+    }
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 4<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+
+let app2 = new Vue({
+    el: '#app2',
+    data: {
+        employees: {
+	employee1: '100$',
+	employee2: '200$',
+	employee3: '300$',
+}}
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 5<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app3 = new Vue({
+    el: '#app3',
+    data: {
+        employees: {
+	employee1: '100$',
+	employee2: '200$',
+	employee3: '300$',
+}}
+})
+</script>
+</html>
