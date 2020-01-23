@@ -30,6 +30,23 @@
             </li>
         </ul>
     </div>
+    <div id="app4">
+        <ul>
+            <li v-for="user in users">
+                {{ user.name }} - {{ user.salary }}
+            </li>
+        </ul>
+    </div>
+    <div id="app5">
+        <ul>
+            <li v-for="href in hrefs"><a v-bind:href="href.href"> </a>{{href.text}}</li>
+        </ul>
+    </div>  
+    <div id="app6">
+        <ul>
+            <li v-for="product in products">{{product.name}} цена: {{product.price}} количество: {{product.quantity}} сумма: {{product.price * product.quantity}}   </li>
+        </ul>
+    </div>    
 </body>
 <script>
 let app = new Vue({
@@ -58,6 +75,37 @@ let app3 = new Vue({
 	employee2: '200$',
 	employee3: '300$',
 }}
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app4 = new Vue({
+    el: "#app4",
+    data: {
+     users:  [
+            {name: 'user1', salary: '300$'},
+			{name: 'user2', salary: '400$'},
+			{name: 'user3', salary: '500$'},
+    ], }    
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 8<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app5 = new Vue({
+    el: "#app5",
+    data: {
+        hrefs: [
+	{href: '1.html', text: 'ссылка 1'},
+	{href: '2.html', text: 'ссылка 2'},
+	{href: '3.html', text: 'ссылка 3'},
+] }    
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><ЗАДАЧА 9><><><><><><><><><><><><><><><><><><><><><><><>');
+let app6 = new Vue({
+    el: "#app6",
+    data: {
+        products: [
+	{name: 'product1', price: 100, quantity: 5},
+	{name: 'product2', price: 200, quantity: 4},
+	{name: 'product3', price: 300, quantity: 3},
+]
+ }    
 })
 </script>
 </html>
