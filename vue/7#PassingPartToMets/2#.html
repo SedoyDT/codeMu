@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="showMessage('привет')">Поприветствовать</button>
+      <button v-on:click="showMessage('пока')">Попрощаться</button>
+      <button v-on:click="showMessage2('Вася')">Вася</button>
+      <button v-on:click="showMessage2('Петя')">Петя</button>
+    </div>
+    <div id="app2">
+      <ul>
+        <li v-for="(item, index) in items" v-on:click="removeItem(index)">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+    <div id="app3">
+      <ul>
+        <li v-for="(item,index) in items" v-on:click="removeItem(index)">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+    <div id="app4">
+      <ul>
+        <li v-for="(item,index) in items" v-on:click="square(index,item)">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+    <div id="app5">
+        <ul>
+          <li v-for="(item,index) in items" v-on:click="sign(index,item)">
+            {{item}}
+          </li>
+        </ul>
+      </div>
+  </body>
+  <script>
+    let app = new Vue({
+      el: "#app",
+      methods: {
+        // Переданный параметр попадает в переменную message:
+        showMessage: function(message) {
+          alert(message); // выведем содержимое параметра
+        },
+        showMessage2: function(name) {
+          alert("Привет, " + name); // выведем содержимое параметра
+        }
+      }
+    });
+    console.log(
+      "<><><><><><><><><><><><>ЗАДАЧА 2<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+    );
+    let app2 = new Vue({
+      el: "#app2",
+      data: {
+        items: ["a", "b", "c", "d", "e"]
+      },
+      methods: {
+        removeItem: function(index) {
+          this.items.splice(index, 1);
+        }
+      }
+    });
+    console.log(
+      "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 3<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+    );
+    let app3 = new Vue({
+      el: "#app3",
+      data: {
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 8]
+      },
+      methods: {
+        removeItem: function(index) {
+          this.items.splice(index, 1);
+        }
+      }
+    });
+    console.log(
+      "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 4<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+    );
+    let app4 = new Vue({
+      el: "#app4",
+      data: {
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 8]
+      },
+      methods: {
+        square: function(index, item) {
+          this.items.splice(index, 1, item * item);
+        },
+        sign: function(index, item) {
+          this.items.splice(index, 1, String(item + "!"));
+        }
+      }
+    });
+    let app5 = new Vue({
+      el: "#app5",
+      data: {
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 8]
+      },
+      methods: {
+        sign: function(index, item) {
+          this.items.splice(index, 1, String(item + "!"));
+        }
+      }
+    });
+  </script>
+</html>

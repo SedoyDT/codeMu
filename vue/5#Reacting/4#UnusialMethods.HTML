@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="moreZero">Нажмите</button>
+        <button v-on:click="moreZero2">Нажмите2</button>
+        <ul>
+            <li v-for="item in arr">{{item}}</li>
+        </ul>
+    </div>
+  
+</body>
+<script>
+let app = new Vue({
+    el: "#app",
+    data: {
+        arr: [-1,-2,-1,-4,-6,-7,1,2,3,4,5,6,12,12,13]
+    },
+    methods: {
+        moreZero: function(){
+            this.arr = this.arr.filter(function(elem) {
+	if (elem >= 0 && elem < 10) {
+		return true;
+	} else {
+		return false;
+	}
+});
+        },
+        moreZero2: function(){
+            this.arr= this.arr.filter(elem =>elem>0&&elem<10 )
+        }},
+       
+})
+</script>
+</html>

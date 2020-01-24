@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <p v-if="age < 18">Подросток</p>
+        <p v-else-if="age >= 19 && age <= 25">Молодой человек</p>
+        <p v-else>Мужчина</p>
+    </div>
+    <div id="app2">
+        <button v-on:click='isActive'>Нажмите</button>
+        <template v-if="active == true">
+            <h1>Заголовок</h1>
+            <p>Абзац 1</p>
+            <p>Абзац 2</p>
+            <p>Абзац 3</p>
+          </template>
+    </div>
+  </body>
+  <script>
+let app = new Vue({
+    el:"#app",
+    data: {
+	age: 26,
+}
+})
+let app2 = new Vue({
+    el: "#app2",
+    data: {
+         active: true
+    },
+    methods: {
+        isActive: function(){
+            this.active = !this.active
+        }
+    }
+})
+  </script>
+</html>

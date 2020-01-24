@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <p>{{ text }} </p>
+        <button v-on:click="vs">Изменить текст</button>      
+    </div>
+</body>
+<script>
+let app = new Vue({
+	el: '#app',
+	data: {еу
+		text: 'textd',
+	},
+    methods: {
+	
+	upperCaseFirst:function(){
+        this.text = this.text[0].toUpperCase() + this.text.slice(1)
+        console.log(this.text[0].toUpperCase())
+    },
+    upperCaseLast:function(){
+        this.text = this.text.slice(0,-1) + this.text[this.text.length-1].toUpperCase() 
+        //console.log(this.text[-1].toUpperCase())
+    },
+    vs: function(){
+        this.upperCaseFirst()
+        this.upperCaseLast()
+    }
+}
+});
+</script>
+</html>

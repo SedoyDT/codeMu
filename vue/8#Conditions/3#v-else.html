@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+   
+    <div id="app">
+        <p v-if="show">да</p>
+        <p v-else>нет</p>
+    </div>
+    <div id="app2">
+        <p v-if="hello">Привет {{name}} </p>
+        <p v-else>Пока {{name}} </p>
+    </div>
+  </body>
+  <script>
+let app = new Vue({
+	el: '#app',
+	data: {
+		show: true, // тут или true, или false
+	},
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАНИЕ 7<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app2 = new Vue({
+	el: '#app2',
+	data: {
+	hello: false,
+	name: 'Вася'
+}
+});
+  </script>
+</html>

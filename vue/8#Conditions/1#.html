@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+   <div id="app">
+       <p v-if="show">Hello</p>
+       <p v-if="!show">NO</p>
+   </div> 
+   <div id="app2">
+	<button v-on:click="hideElem">{{text}}</button>
+	<button v-on:click="showElem">Показать</button>
+	<p v-if="show">{{name}}</p>
+</div>
+   
+  </body>
+  <script>
+  let app = new Vue({
+	el: '#app',
+	data: {
+		show: true,
+	},
+});
+let app2 = new Vue({
+	el: '#app2',
+	data: {
+		show: true,
+        text: "Показать",
+        name: 'Вася'
+	},
+    methods: {
+	hideElem: function() {
+		if(this.show == true){
+          this.show = false
+          this.text = 'Показать'
+        }else {
+        this.show = true
+        this.text = '  Убрать  ' }
+	},
+    showElem: function() {
+	     this.show = true
+         this.text = '  Убрать  '
+	}
+}
+});
+  </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="showMessage('привет')">Поприветствовать</button>
+        <button v-on:click="showMessage('пока')">Попрощаться</button>
+        <button v-on:click="showMessage2('Вася')">Вася</button>
+        <button v-on:click="showMessage2('Петя')">Петя</button>
+    </div>
+</body>
+<script>
+let app = new Vue({
+	el: '#app',
+	methods: {
+		// Переданный параметр попадает в переменную message:
+		showMessage: function(message) {
+			alert(message); // выведем содержимое параметра
+		},
+        showMessage2: function(name) {
+			alert("Привет, "+ name); // выведем содержимое параметра
+		}
+	}
+});
+console.log('<><><><><><><><><><><><>ЗАДАЧА 2<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+
+</script>
+</html>

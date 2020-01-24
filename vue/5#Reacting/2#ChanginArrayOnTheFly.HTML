@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="addItem">Добавить</button>
+      <ul>
+        <li v-for="item in items">{{item}}</li>
+      </ul>
+    </div>
+    <div id="app2">
+      <button v-on:click="addItem">Добавить !!!</button>
+      <ul>
+        <li v-for="item in items">{{item}}</li>
+      </ul>
+    </div>
+    <div id="app3">
+      <button v-on:click="del">Del</button>
+      <ul>
+        <li v-for="item in items">{{item}}</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+  let app = new Vue({
+	el: '#app',
+	data: {
+		items: ['a', 'b', 'c', 'd', 'e'],
+  },
+  methods: {
+    addItem: function(){
+      this.items.push('пункт')
+    }
+  }
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app2 = new Vue({
+  el: "#app2",
+  data: {
+    items: ['a','b','c','d','e'],
+  },
+  methods: {
+    addItem: function(){
+      this.items.push('!!!')
+    }
+  }
+})
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app3 = new Vue({
+  el: "#app3",
+  data: {
+    items: ['a','b','c','d','e'],
+    items3: ['a','b','c','d','e'],
+    items2: [],
+
+  },
+  methods: {
+    del: function(){
+      this.items.splice(0,1)
+      this.items2= this.items.slice(this.items)
+      this.items3.splice(-1,1)
+      console.log(this.items2)
+      console.log("Удалили последний элемент: "+this.items3)
+    }
+  }
+})
+
+  </script>
+</html>

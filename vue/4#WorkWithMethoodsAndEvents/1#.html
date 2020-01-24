@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ show() }}
+    </div>
+    <div id="app2">
+      {{ show() }}
+    </div>
+    <div id="app3">
+        {{ show() }}
+      </div>
+  </body>
+  <script>
+    let app = new Vue({
+      el: "#app",
+      data: {
+        message: "hello"
+      },
+      methods: {
+        show: function() {
+          alert("!");
+        }
+      }
+    });
+    console.log(
+      "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+    );
+    let app2 = new Vue({
+      el: "#app2",
+      data: {
+        message: "hello"
+      },
+      methods: {
+        show: function() {
+          alert(this.message); // выведет 'hello'
+        }
+      }
+    });
+    console.log(
+      "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 1<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+    );
+    console.log(
+      "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+    );
+    let app3 = new Vue({
+      el: "#app3",
+      data: {
+        num1: 1,
+        num2: 2
+      },
+      methods: {
+        show: function() {
+          alert(this.num1 + this.num2); // выведет 'hello'
+        }
+      }
+    });
+  </script>
+</html>

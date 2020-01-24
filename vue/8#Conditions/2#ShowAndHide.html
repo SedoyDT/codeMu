@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+   
+    <div id="app">
+        <button v-on:click="toggleElem">Нажми</button>
+        <p v-if="show">hello</p>
+    </div>
+    <div id="app2">
+        <button v-on:click="toggleElem">Нажми</button>
+        <ul>
+            <li v-if="show" v-for="item in items">{{item}}</li>
+        </ul>
+    </div>
+    <div id="app3">
+        <button v-on:click="toggleElem">Нажми</button>
+        <ul>
+            <p v-if="show" >Тут</p>
+            <p v-if="!show" >Или Тут</p>
+        </ul>
+    </div>
+
+   
+  </body>
+  <script>
+  let app = new Vue({
+	el: '#app',
+	data: {
+		show: true,
+        
+	},
+	methods: {
+		toggleElem: function() {
+			this.show = !this.show;
+		}
+	}
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ARR Задача 7<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app2 = new Vue({
+	el: '#app2',
+	data: {
+		show: false,
+        items: [1,2,3,4,5,6,7,8,9,0,10]
+        
+	},
+	methods: {
+		toggleElem: function() {
+			this.show = !this.show;
+		}
+	}
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> ЗАДАЧА 8<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app3 = new Vue({
+	el: '#app3',
+	data: {
+		show: false,
+        
+        
+	},
+	methods: {
+		toggleElem: function() {
+			this.show = !this.show;
+		}
+	}
+});
+  </script>
+</html>

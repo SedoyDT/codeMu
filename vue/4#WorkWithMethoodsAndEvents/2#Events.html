@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app"><button v-on:click="show">
+       Нажмите 
+</button></div>
+<div id="app3"><button v-on:click="show">
+    Текст
+</button></div>  
+<div id="app4"><button v-on:mouseover="show">
+   Наведи
+</button></div> 
+<div id="app5"><button v-on:mouseout="show">
+    Сумма
+ </button></div>   
+</body>
+<script>
+let app = new Vue({
+	el: '#app',
+	data: {
+		message: 'hello',
+	},
+	methods: {
+		show: function() {
+			alert(this.message);
+		}
+	}
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 3<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app3 = new Vue({
+	el: '#app3',
+	data: {
+		text: 'text',
+	},
+	methods: {
+		show: function() {
+			alert(this.text);
+		}
+	}
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 4<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app4 = new Vue({
+	el: '#app4',
+	data: {
+		text: 'text',
+	},
+	methods: {
+		show: function() {
+			alert(this.text);
+		}
+	}
+});
+console.log('<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>ЗАДАЧА 5<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>');
+let app5 = new Vue({
+	el: '#app5',
+	data: {
+	num1: 1,
+	num2: 2,
+	num3: 3,
+},
+	methods: {
+		show: function() {
+			alert(this.num1+this.num2+this.num3);
+		}
+	}
+});
+</script>
+</html>

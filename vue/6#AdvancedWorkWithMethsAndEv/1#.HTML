@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <p>Имя: {{ name }}, возраст: {{ age }} </p>
+        <button v-on:click="changeUser">Изменить юзера</button>      
+    </div>
+</body>
+<script>
+let app = new Vue({
+	el: '#app',
+	data: {
+		name: 'Коля',
+		age: 20,
+	},
+    methods: {
+	// Изменяет имя:
+	changeName: function() {
+		this.name = 'Вася';
+	},
+	
+	// Изменяет возраст:
+	changeAge: function() {
+		this.age = 30;
+	},
+    // Этот метод привязан к кнопке:
+		changeUser: function() {
+			this.changeName(); // изменим имя
+			this.changeAge(); // изменим возраст
+		},
+}
+});
+</script>
+</html>
